@@ -1,67 +1,72 @@
-<%= form_with(model: entry) do |form| %>
+<%= form_with(model: entry, local: true) do |form| %>
   <% if entry.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
 
-      <ul>
-        <% entry.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="message is-danger">
+      <div class="message-header">
+        <p><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</p>
+      </div>
+
+      <div class="message-body">
+        <ul>
+          <% entry.errors.full_messages.each do |mesage| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :number_of_items, style: "display: block" %>
-    <%= form.number_field :number_of_items %>
+  <div class="field">
+    <%= form.label :number_of_items, class: "label" %>
+    <%= form.number_field :number_of_items, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :po_number, style: "display: block" %>
-    <%= form.number_field :po_number %>
+  <div class="field">
+    <%= form.label :po_number, class: "label" %>
+    <%= form.number_field :po_number, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :item, style: "display: block" %>
-    <%= form.text_field :item %>
+  <div class="field">
+    <%= form.label :item, class: "label" %>
+    <%= form.text_field :item, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :po_date, style: "display: block" %>
-    <%= form.date_field :po_date %>
+  <div class="field">
+    <%= form.label :po_date, class: "label" %>
+    <%= form.date_field :po_date, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :invoice_date, style: "display: block" %>
-    <%= form.date_field :invoice_date %>
+  <div class="field">
+    <%= form.label :invoice_date, class: "label" %>
+    <%= form.date_field :invoice_date, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :serial_number, style: "display: block" %>
-    <%= form.number_field :serial_number %>
+  <div class="field">
+    <%= form.label :serial_number, class: "label" %>
+    <%= form.number_field :serial_number, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :cost, style: "display: block" %>
-    <%= form.number_field :cost %>
+  <div class="field">
+    <%= form.label :cost, class: "label" %>
+    <%= form.number_field :cost, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :client_acronym, style: "display: block" %>
-    <%= form.text_field :client_acronym %>
+  <div class="field">
+    <%= form.label :client_acronym, class: "label" %>
+    <%= form.text_field :client_acronym, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :install_date, style: "display: block" %>
-    <%= form.date_field :install_date %>
+  <div class="field">
+    <%= form.label :install_date, class: "label" %>
+    <%= form.date_field :install_date, class: "input" %>
   </div>
 
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_field :notes %>
+  <div class="field">
+    <%= form.label :notes, class: "label" %>
+    <%= form.text_field :notes, class: "input" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
   </div>
 <% end %>
