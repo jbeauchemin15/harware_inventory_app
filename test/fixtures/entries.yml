@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_items: 1
+  po_number: 1
+  item: MyString
+  po_date: 2022-07-18
+  invoice_date: 2022-07-18
+  serial_number: 1
+  cost: 1
+  client_acronym: MyString
+  install_date: 2022-07-18
+  notes: MyString
+
+two:
+  number_of_items: 1
+  po_number: 1
+  item: MyString
+  po_date: 2022-07-18
+  invoice_date: 2022-07-18
+  serial_number: 1
+  cost: 1
+  client_acronym: MyString
+  install_date: 2022-07-18
+  notes: MyString
