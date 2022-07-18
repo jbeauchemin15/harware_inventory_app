@@ -1,13 +1,35 @@
-<h1>Entries</h1>
+<% content_for :title do %>
+  PCC Hardware Inventory
+<% end %>
 
-<div id="entries">
+<div class="columns mt-6 is-centered">
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title"><%= entry.item %></p>
+        </header>
+      <div class="card-content">
+        <div class="content">
+          <p><span class="has-text-weight-bold">Number of items: </span><%= entry.number_of_items %></p>
+          <p><span class="has-text-weight-bold">PO Number: </span><%= entry.po_number %></p>
+          <p><span class="has-text-weight-bold">PO Date: </span><%= entry.po_date %></p>
+          <p><span class="has-text-weight-bold">Invoice Date: </span><%= entry.invoice_date %></p>
+          <p><span class="has-text-weight-bold">Serial Number: </span><%= entry.serial_number %></p>
+          <p><span class="has-text-weight-bold">Cost: $</span><%= entry.cost %></p>
+          <p><span class="has-text-weight-bold">Client Acronym: </span><%= entry.client_acronym %></p>
+          <p><span class="has-text-weight-bold">Install Date: </span><%= entry.install_date %></p>
+          <p><span class="has-text-weight-bold">Notes: </span><%= entry.notes %></p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <%= link_to "Show", entry, class: "card-footer-item" %> |
+        <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %> |
+        <%= link_to "Destroy", entry, method: :delete, data: { confirm: "Are you sure?" }, class: "card-footer-item" %>  
+      </div>
+
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New entry", new_entry_path %>
-<%= button_to "Destroy this entry", @entry, method: :delete %>
