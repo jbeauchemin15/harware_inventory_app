@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_18_134602) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_25_141636) do
   create_table "entries", force: :cascade do |t|
     t.integer "number_of_items"
     t.integer "po_number"
@@ -22,6 +22,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_18_134602) do
     t.string "client_acronym"
     t.date "install_date"
     t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

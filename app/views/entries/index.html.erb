@@ -2,6 +2,10 @@
   PCC Hardware Inventory
 <% end %>
 
+<% if logged_in? %>
+  <h2>Hello, <%= current_user.username %>!</h2>
+<% end %>
+
 <div class="columns mt-6 is-centered">
   <% @entries.each do |entry| %>
     <div class="column is-one-quarter">

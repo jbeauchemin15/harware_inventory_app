@@ -1,0 +1,20 @@
+<h1>Sign up</h1>
+<br>
+
+<%= form_with(model: @user, local: true) do |form| %>
+ 
+    <div class="field">
+      <%= form.label :username, class: "label" %><br/>
+      <%= form.text_field :username, class: "input" %>
+    </div>
+     
+    <div class="field">
+      <%= form.label :password, class: "label" %><br/>
+      <%= form.password_field :password, class: "input" %>
+    </div>
+     
+    <div class="actions">
+      <%= form.submit class: "button is-success" %>
+    </div>
+     
+<% end %>
